@@ -1,0 +1,55 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Segoe UI", sans-serif;
+  text-decoration: none;
+  outline: none;
+}
+
+.logo:focus-visible .icon {
+  box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.75);
+  transition: box-shadow 0.2s ease;
+  border-radius: 8px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  background-color: #63ffda;
+  color: #0a2b3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s ease, filter 0.18s ease,
+    background-color 0.2s ease;
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo:hover .icon {
+  filter: drop-shadow(0 0 6px rgba(100, 255, 218, 0.55));
+  background-color: rgba(255, 255, 255, 0.92);
+  transform: scale(1.12);
+}
+
+.logo:active {
+  transform: scale(0.97);
+}
+
+@media (hover: none) {
+  .logo:active {
+    transform: scale(0.95);
+  }
+}

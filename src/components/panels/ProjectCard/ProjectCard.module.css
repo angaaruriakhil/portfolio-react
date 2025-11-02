@@ -1,0 +1,157 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 4;
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* make the image span the full card width on top */
+/* .img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9; 
+  object-fit: cover;   
+} */
+
+.img {
+  width: 100%;
+  height: clamp(180px, 22vw, 260px);
+  object-fit: cover;
+  display: block;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px 20px;
+  box-sizing: border-box;
+
+  flex: 1;
+}
+
+.frostedGlass {
+  background: rgba(93, 116, 168, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+  margin: 0;
+}
+.featured {
+  color: #64ffda;
+  font-weight: bold;
+}
+.icons {
+  margin-left: 6px;
+}
+.colored i {
+  margin-left: 5px;
+  padding: 0;
+}
+
+.title {
+  color: white;
+  margin: 6px 0 0 0;
+}
+
+.links {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.linkBtn {
+  color: #64ffda;
+  background-color: var(--tertiary-color, rgba(0, 0, 0, 0.25));
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 15px;
+  border: 2px solid var(--secondary-color, rgba(255, 255, 255, 0.6));
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.linkBtnHighlight {
+  color: #64ffda;
+}
+
+@media screen and (min-width: 1200px) {
+  .links {
+    justify-content: space-between;
+  }
+  .img {
+    transition: transform 300ms ease, filter 300ms ease;
+  }
+
+  .img:hover {
+    transform: scale(1.04);
+    filter: brightness(1.04);
+  }
+
+  .linkBtn {
+    transition: transform 200ms ease, background 200ms ease;
+  }
+
+  .linkBtn:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 100%;
+  }
+  .text {
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 18px;
+  }
+  .img {
+    width: 100%;
+  }
+  .subheader {
+    font-size: 15px;
+    margin-top: 10px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .title {
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .info {
+    font-size: 15px;
+    text-align: left;
+    width: 100%;
+    padding: 10px 0 0 0;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .links {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .linkBtn {
+    font-size: 10px;
+    padding: 10px;
+  }
+}

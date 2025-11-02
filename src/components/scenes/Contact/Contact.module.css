@@ -1,0 +1,189 @@
+.contact {
+  max-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--primary-font, inherit);
+  color: var(--primary-color, #fff);
+  box-sizing: border-box;
+}
+
+.form {
+  z-index: 5;
+  width: 30vw;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2em;
+  box-sizing: border-box;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  border: none;
+  padding: 0;
+  margin: 0;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+/* ---------- TYPOGRAPHY & FIELD COMFORT ---------- */
+.label {
+  color: #fff;
+  font-family: var(--primary-font, inherit);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  display: block;
+}
+
+.label + input,
+.label + textarea {
+  margin-top: 6px;
+}
+
+.inputs input,
+.inputs textarea {
+  color: #000;
+  font-size: 17px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.inputs textarea {
+  min-height: 120px;
+  resize: vertical;
+  max-height: 40vh;
+}
+
+.inputs input:focus-visible,
+.inputs textarea:focus-visible {
+  outline: 2px solid #0bce83;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(11, 206, 131, 0.25);
+}
+
+.button {
+  color: #fff;
+}
+
+input[type="submit"].button {
+  -webkit-appearance: none;
+  appearance: none;
+
+  align-self: center;
+
+  font-family: var(--primary-font, inherit);
+  font-weight: 800;
+  font-size: 1.2rem;
+
+  padding: 14px 26px;
+  border-radius: 14px;
+  border: 0;
+  color: #fff;
+  letter-spacing: 0.2px;
+  text-align: center;
+
+  background: linear-gradient(135deg, #0bce83 0%, #1fd6a0 50%, #1178c3 100%);
+  box-shadow: 0 8px 18px rgba(17, 120, 195, 0.25),
+    0 3px 8px rgba(11, 206, 131, 0.25);
+
+  margin-top: 20px;
+
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  input[type="submit"].button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(17, 120, 195, 0.32),
+      0 6px 16px rgba(11, 206, 131, 0.32);
+    filter: brightness(1.04);
+    cursor: pointer;
+  }
+}
+
+input[type="submit"].button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 6px 14px rgba(17, 120, 195, 0.25),
+    0 3px 10px rgba(11, 206, 131, 0.25);
+  filter: brightness(0.98);
+}
+
+input[type="submit"].button:focus-visible {
+  outline: 3px solid #0bce83;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input[type="submit"].button {
+    transition: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  input[type="submit"].button:hover {
+    opacity: 0.95;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .form {
+    margin-top: 20px;
+  }
+  .inputs {
+    width: 60vw;
+  }
+  .label {
+    font-size: 20px;
+  }
+  input[type="submit"].button {
+    font-size: 1.1rem;
+    padding: 12px 22px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .form {
+    width: 70vw;
+    min-height: 30vh;
+    margin-top: 20px;
+  }
+  .inputs {
+    width: 70vw;
+  }
+  .label {
+    font-size: 18px;
+  }
+  .inputs input,
+  .inputs textarea {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contact {
+    justify-content: space-around;
+  }
+  .form {
+    width: 80vw;
+    min-height: 30vh;
+    margin-top: 0;
+  }
+  .inputs {
+    width: 80vw;
+    font-size: 15px;
+  }
+}

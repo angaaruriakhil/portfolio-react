@@ -1,0 +1,80 @@
+/* -------------------------------------------------------------
+   GLOBAL UTILITIES
+   Reusable helpers shared across components.
+   Keep section-specific CSS inside each component's module.
+-------------------------------------------------------------- */
+
+.rest-of-page {
+  /* background: linear-gradient(#647aaf, #092659); */
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* ---------- layout + flex ---------- */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.section-padding {
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+/* ---------- visual effects ---------- */
+.frosted-glass {
+  background: rgba(93, 116, 168, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- text helpers ---------- */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.highlight {
+  color: #64ffda;
+  font-weight: bold;
+}
+
+/* ---------- misc ---------- */
+.hidden {
+  display: none !important;
+}
+.visible {
+  display: block !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+html {
+  scroll-behavior: smooth;
+}

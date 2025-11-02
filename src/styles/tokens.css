@@ -1,0 +1,8 @@
+:root {
+  --primary-color: white;
+  --primary-font: "Red Hat Display";
+  --secondary-color: #64ffda;
+  --secondary-font: "Consolas";
+  --tertiary-color: #0b1039;
+  --nav-height: 3.5rem;
+}

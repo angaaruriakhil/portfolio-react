@@ -1,0 +1,133 @@
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 22px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.role {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.roleIcon {
+  color: #5be6cb;
+  opacity: 0.95;
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05em;
+  line-height: 1;
+  transform: translateY(1px);
+  flex: 0 0 auto;
+}
+
+.stackIcon,
+.stackImgIcon,
+.stackDevIcon {
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* crisp */
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.stackIcon:hover,
+.stackImgIcon:hover,
+.stackDevIcon:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.stackMore {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(20, 28, 48, 0.35);
+  color: #e7f6ff;
+  line-height: 1;
+
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.stackMore:hover {
+  transform: translateY(-1px);
+  background: rgba(20, 28, 48, 0.5);
+  border-color: rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+
+.stackMore:active {
+  transform: translateY(0);
+}
+
+.stackMore:focus-visible {
+  outline: 2px solid #5be6cb;
+  outline-offset: 2px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stackRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+
+.timeline {
+  margin: 6px 0 2px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.meta {
+  margin: 0 0 12px;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.list {
+  list-style: disc outside;
+  padding-left: 1.2rem;
+  margin: 0.25rem 0 0;
+}
+
+.list li {
+  display: list-item;
+  margin: 8px 0;
+  line-height: 1.55;
+  padding-left: 0;
+}
+
+.list li::marker {
+  color: #5be6cb;
+  font-size: 0.9em;
+}

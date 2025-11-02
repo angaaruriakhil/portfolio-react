@@ -1,0 +1,12 @@
+.hamburgerFixed {
+  position: fixed;
+  right: 1px;
+  z-index: 50;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .hamburgerFixed {
+    visibility: visible;
+  }
+}

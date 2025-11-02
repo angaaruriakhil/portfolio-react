@@ -1,0 +1,85 @@
+/* src/styles/base.css */
+@import "./tokens.css";
+@import "./typography.css";
+@import "./utilities.css";
+@import "./animations.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/600.css";
+
+/* Base reset + defaults matching original intent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
+}
+
+main {
+  /* AOS library adds whitespace for some reason on mobile.
+  This line fixes it.
+  If it breaks again add this to body. It will break scroll snap - its a bug. You have to sacrifice one or the other. */
+  overflow-x: hidden;
+  background: linear-gradient(#366580, #0a1f4b);
+}
+
+body {
+  margin: 0;
+  color: var(--primary-color);
+  background: var(--tertiary-color);
+  font-family: var(
+    --primary-font,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif
+  );
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Utility commonly used in sections */
+.container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,24 @@
+.experience {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  width: 70vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    width: 90vw;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
