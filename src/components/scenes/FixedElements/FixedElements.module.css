@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  z-index: 100;
 }
 
 :global(body.booting) :global(.fixed_elements) {

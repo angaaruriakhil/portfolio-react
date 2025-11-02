@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  z-index: 50;
+  z-index: 2001;
 
   font-family: var(
     --secondary-font,
@@ -24,7 +24,7 @@
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: hidden; /* desktop: contain effects under the bar */
 }
 
 .leftCluster {
@@ -48,7 +48,6 @@
   opacity: 0.95;
   white-space: nowrap;
 }
-
 .dot {
   color: #7fbfff;
   opacity: 0.55;
@@ -61,18 +60,15 @@
   gap: 8px;
   margin-left: 2px;
 }
-
 .trayIcon {
   display: inline-block;
   color: #aee4ff;
   vertical-align: middle;
   opacity: 0.9;
 }
-
 .leftCluster:hover .brandTag {
   text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
 }
-
 .sysIcon {
   color: #aee4ff;
   font-size: 0.95rem;
@@ -90,6 +86,7 @@
   text-align: center;
 }
 
+/* Desktop list */
 .listMaster {
   grid-column: 3;
   display: flex;
@@ -148,10 +145,12 @@
   text-underline-offset: 10px;
 }
 
+/* ─────────────────────────────  Mobile  ───────────────────────────── */
 @media screen and (max-width: 1200px) {
   .nav {
     padding: 0 12px;
     grid-template-columns: 1fr auto 1fr;
+    overflow: visible; /* allow the dropdown to escape */
   }
 
   .brandTag,
@@ -163,21 +162,24 @@
   .leftCluster {
     justify-self: start;
   }
-
   .brandCenter {
     display: block;
   }
 
+  /* Mobile dropdown container (hidden by default) */
   .listMaster {
     grid-column: 3;
     justify-self: end;
+
     position: fixed;
     right: 20px;
     top: 60px;
-    display: none;
+
+    display: none; /* closed by default */
+    pointer-events: none; /* block accidental clicks when closed */
+
     flex-direction: column;
     align-items: flex-start;
-    visibility: visible;
 
     border: 2px solid #fff;
     border-radius: 6px;
@@ -188,7 +190,15 @@
     gap: 18px;
     min-width: 180px;
     width: auto;
-    z-index: 60;
+
+    /* sit above Terminal and anything with transforms */
+    z-index: 20000 !important;
+  }
+
+  /* Open state: show + enable interaction */
+  .listMaster[data-open="true"] {
+    display: flex !important;
+    pointer-events: auto;
   }
 
   .listItem {
@@ -210,10 +220,6 @@
 
   .link:hover {
     text-decoration: none;
-  }
-
-  :global(.display_navbar) {
-    display: flex !important;
   }
 }
 

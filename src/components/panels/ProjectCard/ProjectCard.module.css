@@ -75,23 +75,6 @@
   gap: 20px;
 }
 
-.linkBtn {
-  color: #64ffda;
-  background-color: var(--tertiary-color, rgba(0, 0, 0, 0.25));
-  font-weight: bold;
-  border-radius: 15px;
-  padding: 15px;
-  border: 2px solid var(--secondary-color, rgba(255, 255, 255, 0.6));
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.linkBtnHighlight {
-  color: #64ffda;
-}
-
 @media screen and (min-width: 1200px) {
   .links {
     justify-content: space-between;
@@ -103,14 +86,6 @@
   .img:hover {
     transform: scale(1.04);
     filter: brightness(1.04);
-  }
-
-  .linkBtn {
-    transition: transform 200ms ease, background 200ms ease;
-  }
-
-  .linkBtn:hover {
-    transform: translateY(-2px) scale(1.05);
   }
 }
 
@@ -149,9 +124,5 @@
   .links {
     justify-content: space-between;
     margin-top: 10px;
-  }
-  .linkBtn {
-    font-size: 10px;
-    padding: 10px;
   }
 }

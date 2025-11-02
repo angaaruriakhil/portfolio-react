@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Contact.module.css";
 import Footer from "../../layout/Footer/Footer";
 import HeaderBar from "../../layout/HeaderBar/HeaderBar";
+import Button from "../../layout/Button/Button";
 
 export default function Contact() {
   return (
@@ -65,12 +66,9 @@ export default function Contact() {
             />
           </fieldset>
 
-          <input
-            type="submit"
-            value="Submit"
-            className={styles.button}
-            data-aos="zoom-in"
-          />
+          <Button type="submit" variant="highlight">
+            Submit <i className="fas fa-external-link-square-alt" />
+          </Button>
         </form>
       </div>
 

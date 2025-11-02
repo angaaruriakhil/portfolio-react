@@ -3,7 +3,6 @@ import HeaderBar from "../../layout/HeaderBar/HeaderBar";
 import React, { useEffect, useMemo, useState } from "react";
 
 export default function About() {
-  // Core Themes state
   const CORE_THEMES = [
     "Developer experience",
     "Secure-by-default delivery",
@@ -19,7 +18,6 @@ export default function About() {
   const [themesPaused, setThemesPaused] = useState(false);
 
   useEffect(() => {
-    // Respect reduced motion
     const prefersReduced =
       typeof window !== "undefined" &&
       window.matchMedia &&
@@ -37,6 +35,7 @@ export default function About() {
 
     return () => clearInterval(id);
   }, [themesPaused]);
+
   return (
     <section id="about" className={styles.about}>
       <HeaderBar
@@ -48,11 +47,8 @@ export default function About() {
         subtitleAlign="left"
       />
 
-      {/* Outer frosted container */}
       <div className={styles.panel} data-aos="zoom-in">
-        {/* Two-column split (stacks on mobile) */}
         <div className={styles.split}>
-          {/* LEFT — Narrative */}
           <div
             className={`${styles.card} ${styles.left}`}
             data-aos="fade-right"
@@ -87,7 +83,6 @@ export default function About() {
             </p>
           </div>
 
-          {/* RIGHT — Minimal highlights */}
           <aside
             className={`${styles.card} ${styles.right}`}
             data-aos="fade-left"
@@ -100,31 +95,39 @@ export default function About() {
                 <i className={`fas fa-cloud ${styles.icon}`}></i>
                 Senior Platform Engineer at a global insurer.
               </li>
+
               <li>
-                <i className={`fas fa-graduation-cap ${styles.icon}`}></i>
-                ChemEng MEng alumni of the&nbsp;{" "}
-                <a
-                  className={styles.inlineLink}
-                  href="https://www.surrey.ac.uk/undergraduate/chemical-engineering"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  University of Surrey
-                </a>{" "}
-                &nbsp;(First Class Honours).
+                <i className={`fas fa-graduation-cap ${styles.icon}`} />
+                <span className={styles.liText}>
+                  First Class Honours ChemEng MEng alumnus of the
+                  <a
+                    className={styles.inlineLink}
+                    href="https://www.surrey.ac.uk/undergraduate/chemical-engineering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    University of Surrey
+                  </a>
+                  .
+                </span>
               </li>
+
               <li>
-                <i className={`fas fa-flask ${styles.icon}`}></i>
-                Published researcher at&nbsp;{" "}
-                <a
-                  className={styles.inlineLink}
-                  href="https://www.sciencedirect.com/science/article/abs/pii/S0045653521014971"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Chemosphere.
-                </a>
+                <i className={`fas fa-flask ${styles.icon}`} />
+                <span className={styles.liText}>
+                  Published researcher at
+                  <a
+                    className={styles.inlineLink}
+                    href="https://www.sciencedirect.com/science/article/abs/pii/S0045653521014971"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Chemosphere
+                  </a>
+                  .
+                </span>
               </li>
+
               <li>
                 <i className={`fas fa-robot ${styles.icon}`}></i>
                 Led secure AI enablement initiatives to enhance developer
@@ -167,7 +170,6 @@ export default function About() {
             <hr className={styles.hairline} aria-hidden="true" />
 
             <div className={styles.metaRow}>
-              {/* CORE THEMES */}
               <span className={styles.metaLabel}>Core themes</span>
 
               <span
@@ -182,7 +184,7 @@ export default function About() {
                       className={`${styles.themeItem} ${
                         i === activeTheme ? styles.themeActive : ""
                       }`}
-                      onMouseEnter={() => setActiveTheme(i)} // highlight hovered item
+                      onMouseEnter={() => setActiveTheme(i)}
                     >
                       {t}
                     </span>

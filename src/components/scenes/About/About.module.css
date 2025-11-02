@@ -198,3 +198,81 @@
   line-height: 1;
   transform: translateY(1px);
 }
+
+/* ---------- MOBILE POLISH ---------- */
+@media (max-width: 720px) {
+  /* Make each bullet a neat two-column grid: icon | text */
+  .highlightsList li {
+    display: grid;
+    grid-template-columns: 1.2rem 1fr;
+    column-gap: 10px;
+    align-items: start; /* text aligns to top of the icon */
+    margin: 8px 0;
+  }
+
+  .icon {
+    margin: 0; /* no side margins in grid */
+    width: 1.2rem;
+    transform: none; /* avoid baseline nudge on small screens */
+    line-height: 1; /* consistent vertical rhythm */
+  }
+
+  /* Ensure inline links wrap normally and don't look stretched */
+  .inlineLink {
+    white-space: normal;
+    text-decoration-thickness: 1.25px;
+  }
+
+  /* Core themes: stack label above content and use chips instead of middots */
+  .metaRow {
+    grid-template-columns: 1fr; /* label on its own line */
+    gap: 6px;
+  }
+
+  /* Hide the '•' separators on mobile; we’ll use chips instead */
+  .sep {
+    display: none;
+  }
+
+  .metaTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* space between chips */
+    line-height: 1.5;
+  }
+
+  /* Turn each theme into a small pill for cleaner wrapping */
+  .themeItem {
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    /* keep the hover/active accent you already have */
+  }
+}
+
+.highlightsList a {
+  margin-left: 0.25em;
+}
+
+/* text wrapper inside each <li> so the grid has exactly 2 items: icon | text */
+.liText {
+  display: block;
+}
+
+/* keep the mobile grid neat */
+@media (max-width: 720px) {
+  .highlightsList li {
+    display: grid;
+    grid-template-columns: 1.2rem 1fr;
+    column-gap: 10px;
+    align-items: start;
+    margin: 8px 0;
+  }
+
+  .icon {
+    margin: 0;
+    width: 1.2rem;
+    line-height: 1;
+    transform: none;
+  }
+}

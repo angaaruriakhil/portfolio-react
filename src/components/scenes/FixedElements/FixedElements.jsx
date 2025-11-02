@@ -11,7 +11,7 @@ export default function FixedElements() {
   return (
     <section className={`fixed_elements ${styles.root}`}>
       <Nav isOpen={mobileOpen} onNavigate={() => setMobileOpen(false)} />
-      <HamburgerMenu onToggle={setMobileOpen} />
+      <HamburgerMenu isOpen={mobileOpen} onToggle={setMobileOpen} />
       <Socials variant="vertical" />
     </section>
   );

@@ -1,11 +1,21 @@
 import React from "react";
 import styles from "./Footer.module.css";
+import { useCvLink } from "../../../hooks/useCvLink";
+
+// react-icons versions of your current footer icons
+import {
+  FaLinkedin,
+  FaGithub,
+  FaResearchgate,
+  FaFilePdf,
+} from "react-icons/fa";
 
 export default function Footer({
   name = "Angaar Uriakhil",
   year = new Date().getFullYear(),
-  cvHref = "",
 }) {
+  const { onResumeClick } = useCvLink();
+
   return (
     <footer className={styles.footer}>
       <p className={styles.info}>
@@ -19,8 +29,9 @@ export default function Footer({
           target="_blank"
           rel="noreferrer"
           title="LinkedIn"
+          className={styles.socialIcon}
         >
-          <i className={`fab fa-linkedin ${styles.socialIcon}`} />
+          <FaLinkedin />
         </a>
 
         <a
@@ -28,8 +39,9 @@ export default function Footer({
           target="_blank"
           rel="noreferrer"
           title="ResearchGate"
+          className={styles.socialIcon}
         >
-          <i className={`fab fa-researchgate ${styles.socialIcon}`} />
+          <FaResearchgate />
         </a>
 
         <a
@@ -37,15 +49,20 @@ export default function Footer({
           target="_blank"
           rel="noreferrer"
           title="GitHub"
+          className={styles.socialIcon}
         >
-          <i className={`fab fa-github ${styles.socialIcon}`} />
+          <FaGithub />
         </a>
 
-        {cvHref && (
-          <a href={cvHref} target="_blank" rel="noreferrer" title="CV (PDF)">
-            <i className={`far fa-file-pdf ${styles.socialIcon}`} />
-          </a>
-        )}
+        <a
+          href="#"
+          onClick={onResumeClick}
+          rel="nofollow noreferrer"
+          title="CV (PDF)"
+          className={styles.socialIcon}
+        >
+          <FaFilePdf />
+        </a>
       </div>
     </footer>
   );

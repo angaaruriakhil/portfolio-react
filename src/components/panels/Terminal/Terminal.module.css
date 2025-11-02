@@ -133,6 +133,11 @@
   height: 100vh !important;
   margin-top: 0 !important;
   transform: none !important;
+  z-index: 4000 !important;
+}
+
+.dragging {
+  z-index: 3000 !important;
 }
 
 .maximise .body {
