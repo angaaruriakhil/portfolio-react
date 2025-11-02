@@ -1,7 +1,7 @@
 .hamburgerFixed {
   position: fixed;
   right: 1px;
-  z-index: 50;
+  z-index: 4100;
   visibility: hidden;
 }
 

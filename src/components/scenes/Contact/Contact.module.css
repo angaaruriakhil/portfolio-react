@@ -187,3 +187,7 @@ input[type="submit"].button:focus-visible {
     font-size: 15px;
   }
 }
+
+.form button {
+  margin-top: 20px; /* or 30px if you want more breathing room */
+}

@@ -1,0 +1,52 @@
+/* Exact clone of ProjectCard .linkBtn, adapted for a real <button> too */
+
+.button {
+  /* reset native button look so it matches <a> */
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+
+  /* the actual style (copied from ProjectCard .linkBtn) */
+  color: #64ffda;
+  background-color: var(--tertiary-color, rgba(0, 0, 0, 0.25));
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 15px;
+  border: 2px solid var(--secondary-color, rgba(255, 255, 255, 0.6));
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  /* match interaction feel */
+  transition: transform 200ms ease, background 200ms ease;
+  cursor: pointer;
+
+  /* avoid odd bleed on some browsers */
+  background-clip: padding-box;
+}
+
+.button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* “highlight” in ProjectCard only changed the text color, which we already match */
+.buttonHighlight {
+  color: #64ffda;
+}
+
+/* disabled look identical to old disabledLink */
+.buttonDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Mobile parity with ProjectCard: smaller font + padding */
+@media screen and (max-width: 1200px) {
+  .button {
+    font-size: 10px;
+    padding: 10px;
+  }
+}

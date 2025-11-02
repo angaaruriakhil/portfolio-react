@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ProjectCard.module.css";
+import Button from "../../layout/Button/Button";
 
 export default function ProjectCard({
   aos = "fade-left",
@@ -28,24 +29,30 @@ export default function ProjectCard({
         <p className={styles.info}>{info}</p>
 
         <div className={styles.links}>
-          {links.map((l, i) => (
-            <a
-              key={i}
-              href={l.href}
-              target="_blank"
-              rel="noreferrer"
-              className={`${styles.linkBtn} ${l.highlight ? styles.linkBtnHighlight : ""}`}
-            >
-              {l.label}{" "}
-              <i
-                className={`${
-                  l.label.toLowerCase().includes("source")
-                    ? "fab fa-github-square"
-                    : "fas fa-external-link-square-alt"
-                }`}
-              />
-            </a>
-          ))}
+          {links.map((l, i) => {
+            const isPlaceholder = l.href === "#" || !l.href;
+
+            return (
+              <Button
+                as={isPlaceholder ? "button" : "a"}
+                href={isPlaceholder ? undefined : l.href}
+                variant={l.highlight ? "highlight" : "default"}
+                disabled={isPlaceholder}
+                key={i}
+              >
+                {l.label}
+                {!isPlaceholder && (
+                  <i
+                    className={
+                      l.label.toLowerCase().includes("source")
+                        ? "fab fa-github-square"
+                        : "fas fa-external-link-square-alt"
+                    }
+                  />
+                )}
+              </Button>
+            );
+          })}
         </div>
       </div>
     </div>

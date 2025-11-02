@@ -16,11 +16,17 @@ export default function Terminal({ visible = true, onMinimise, onClose }) {
     if (!node) return;
     const interactable = interact(node).draggable({
       listeners: {
+        start() {
+          node.classList.add(styles.dragging);
+        },
         move(event) {
           if (isMaximized) return;
           posRef.current.x += event.dx;
           posRef.current.y += event.dy;
           node.style.transform = `translate(${posRef.current.x}px, ${posRef.current.y}px)`;
+        },
+        end() {
+          node.classList.remove(styles.dragging);
         },
       },
     });

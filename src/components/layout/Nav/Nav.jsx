@@ -132,7 +132,8 @@ export default function Nav({ isOpen = false, onNavigate }) {
 
       <span className={styles.brandCenter}>Portfolio OS v2.1</span>
 
-      <ul className={`${styles.listMaster} ${isOpen ? "display_navbar" : ""}`}>
+      {/* Mobile + desktop list; mobile visibility toggled via data-open */}
+      <ul className={styles.listMaster} data-open={isOpen ? "true" : "false"}>
         <li className={styles.listItem}>
           <a
             id="landing-link"

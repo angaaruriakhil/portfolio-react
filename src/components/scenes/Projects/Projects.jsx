@@ -95,8 +95,8 @@ export default function Projects() {
             </>
           }
           links={[
-            { href: "", label: "Not live yet", highlight: true },
-            { href: "", label: "Not live yet" },
+            { href: "#", label: "Not live yet", highlight: true },
+            { href: "#", label: "Not live yet" },
           ]}
         />
 

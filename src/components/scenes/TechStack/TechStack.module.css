@@ -215,3 +215,13 @@
     min-height: 50px;
   }
 }
+
+/* Pause by default so it doesn't run off-screen */
+.typewrite {
+  animation-play-state: paused;
+}
+
+/* When AOS adds .aos-animate on scroll-in, run it */
+:global(.aos-animate) .typewrite {
+  animation-play-state: running;
+}

@@ -14,8 +14,9 @@ It is a conversion of the original HTML/CSS/JS build into a **React SPA with com
 
 ## 🎨 Design
 
-The UI was initially designed and prototyped in [Figma](https://www.figma.com/file/UQ7NcCBE9NScccttfMR9e2/Portfolio---Week-1?node-id=0%3A1).  
-While the React version aims to stay true to the original visual direction, there have been several changes to allow for:
+The UI was initially designed and prototyped in [Figma](https://www.figma.com/file/UQ7NcCBE9NScccttfMR9e2/Portfolio---Week-1?node-id=0%3A1).
+
+While the React version aims to loosely stay true to the original visual direction, there have been several changes to allow for:
 
 - More of a unified feel across the site with an OS style permeating the whole site. e.g. A macOS style dock has been added to the landing page.
 - The About page has been split into About, Experience and Tech Stack sections.
@@ -49,21 +50,21 @@ While the React version aims to stay true to the original visual direction, ther
 
 ### Libraries & Tools Used
 
-- `@vitejs/plugin-react` for React + Fast Refresh
-- **AOS** – Animate On Scroll library
-- **Animate.css**
-- **Font Awesome** + `react-icons`
-- **TypeIt React** by [Alex MacArthur](https://typeitjs.com) for typing animation on landing page terminal window.
-- **Hamburgers** – CSS hamburger animations
-- **Interact.js** by [Taye Adeyemi](https://interactjs.io/) for draggable functionality on landing page terminal window.
-- **JetBrains Mono** & custom font assets
-- **Intersection Observer API** for responsive underline on the navigation elements according to the page being viewed.
-- **Hamburgers** by [jonsuh](https://www.jonsuh.com/hamburgers) for hamburger menu and associated animation.
-- **Terminal** CSS styling adapted from [FOBABS](https://dev.to/fobabs/how-i-built-a-typical-ubuntu-terminal-using-html-css-1bpj).
+- `@vitejs/plugin-react` for React + Fast Refresh.
+- [AOS – Animate On Scroll library](https://github.com/michalsnik/aos) by michalsnik.
+- [Animate.css](https://animate.style/) by Daniel Eden and friends.
+- [TypeIt React](https://typeitjs.com) by Alex MacArthur for typing animation on landing page terminal window.
+- [Hamburgers](https://github.com/jonsuh/hamburgers) – CSS hamburger animations by jonsuh.
+- [Interact.js](https://interactjs.io/) by Taye Adeyemi for draggable functionality on landing page terminal window.
+- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for responsive underline on the navigation elements.
+- Terminal CSS styling adapted from [FOBABS](https://dev.to/fobabs/how-i-built-a-typical-ubuntu-terminal-using-html-css-1bpj).
 
-> Many UI effects and ideas were carried over from the original build & refactored using React-friendly patterns.
+#### Icons
 
----
+- [FontAwesome](https://fontawesome.com/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [DevIcon](https://devicon.dev/)
+- [Developer Icons](https://github.com/xandemon/developer-icons) by xandermon
 
 ## 📂 Project Structure
 
