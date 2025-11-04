@@ -241,34 +241,34 @@ export default function Projects() {
             },
           ]}
         />
-
         {/* 6 */}
         <ProjectCard
           aos={getAos(6)}
-          imgSrc={BattleshipImg}
-          imgAlt="A picture of the Battleship project."
+          imgSrc={HangmanImg}
+          imgAlt="A picture of the Hangman project."
           techIcons={
             <>
-              <i className="devicon-javascript-plain colored" />
+              <i className="devicon-typescript-plain colored" />
               <i className="devicon-html5-plain colored" />
               <i className="devicon-sass-original colored" />
             </>
           }
-          title="Battleship"
+          title="Hangman"
           info={
             <>
-              Face against the computer in a daring game of chance as you
-              attempt to locate and sink each other&apos;s ships.
+              Guess a random word generated from the Random Word API.
+              <br />
+              Can you guess correctly before all your lives are lost?
             </>
           }
           links={[
             {
-              href: "https://angaaruriakhil.github.io/Battleship/",
+              href: "https://angaaruriakhil.github.io/hangman/",
               label: "Live Page",
               highlight: true,
             },
             {
-              href: "https://github.com/angaaruriakhil/Battleship",
+              href: "https://github.com/angaaruriakhil/hangman",
               label: "Source Code",
             },
           ]}
@@ -336,31 +336,30 @@ export default function Projects() {
         {/* 9 */}
         <ProjectCard
           aos={getAos(9)}
-          imgSrc={HangmanImg}
-          imgAlt="A picture of the Hangman project."
+          imgSrc={BattleshipImg}
+          imgAlt="A picture of the Battleship project."
           techIcons={
             <>
-              <i className="devicon-typescript-plain colored" />
+              <i className="devicon-javascript-plain colored" />
               <i className="devicon-html5-plain colored" />
               <i className="devicon-sass-original colored" />
             </>
           }
-          title="Hangman"
+          title="Battleship"
           info={
             <>
-              Guess a random word generated from the Random Word API.
-              <br />
-              Can you guess correctly before all your lives are lost?
+              Face against the computer in a daring game of chance as you
+              attempt to locate and sink each other&apos;s ships.
             </>
           }
           links={[
             {
-              href: "https://angaaruriakhil.github.io/hangman/",
+              href: "https://angaaruriakhil.github.io/Battleship/",
               label: "Live Page",
               highlight: true,
             },
             {
-              href: "https://github.com/angaaruriakhil/hangman",
+              href: "https://github.com/angaaruriakhil/Battleship",
               label: "Source Code",
             },
           ]}
