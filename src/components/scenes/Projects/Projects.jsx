@@ -178,6 +178,7 @@ export default function Projects() {
             <>
               <i className="devicon-java-plain colored" />
               <i className="devicon-react-original colored" />
+              <i className="devicon-javascript-plain colored" />
               <i className="devicon-spring-plain-wordmark colored" />
               <i className="devicon-sass-original colored" />
               <i className="devicon-mysql-plain colored" />
@@ -250,7 +251,8 @@ export default function Projects() {
             <>
               <i className="devicon-typescript-plain colored" />
               <i className="devicon-html5-plain colored" />
-              <i className="devicon-sass-original colored" />
+              <i className="devicon-react-original-wordmark colored" />
+              <i className="devicon-vite-original-wordmark colored"></i>
             </>
           }
           title="Hangman"

@@ -15,7 +15,9 @@
   color: var(--primary-color, #fff);
   font-family: var(--secondary-font, inherit);
   margin: 0 0 10px 0;
-  text-decoration: overline;
+
+  border-top: 1px solid var(--primary-color, #fff);
+  padding-top: 0.2em;
 }
 
 .muted {
