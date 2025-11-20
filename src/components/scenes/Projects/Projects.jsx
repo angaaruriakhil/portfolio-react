@@ -137,8 +137,8 @@ export default function Projects() {
         {/* 3 */}
         <ProjectCard
           aos={getAos(3)}
-          imgSrc={CalculatorImg}
-          imgAlt="A picture of the Calculator project."
+          imgSrc={BattleshipImg}
+          imgAlt="A picture of the Battleship project."
           techIcons={
             <>
               <i className="devicon-javascript-plain colored" />
@@ -146,24 +146,21 @@ export default function Projects() {
               <i className="devicon-sass-original colored" />
             </>
           }
-          title="Calculator"
+          title="Battleship"
           info={
             <>
-              Calculator with support for basic operations, decimal inputs,
-              recurring decimals, negative number inputs and chaining
-              operations.
-              <br />
-              Tested using Cypress and usable on PC or mobile.
+              Face against the computer in a daring game of chance as you
+              attempt to locate and sink each other&apos;s ships.
             </>
           }
           links={[
             {
-              href: "https://angaaruriakhil.github.io/js-calculator/",
+              href: "https://angaaruriakhil.github.io/Battleship/",
               label: "Live Page",
               highlight: true,
             },
             {
-              href: "https://github.com/angaaruriakhil/js-calculator",
+              href: "https://github.com/angaaruriakhil/Battleship",
               label: "Source Code",
             },
           ]}
@@ -336,40 +333,9 @@ export default function Projects() {
         />
 
         {/* 9 */}
+
         <ProjectCard
           aos={getAos(9)}
-          imgSrc={BattleshipImg}
-          imgAlt="A picture of the Battleship project."
-          techIcons={
-            <>
-              <i className="devicon-javascript-plain colored" />
-              <i className="devicon-html5-plain colored" />
-              <i className="devicon-sass-original colored" />
-            </>
-          }
-          title="Battleship"
-          info={
-            <>
-              Face against the computer in a daring game of chance as you
-              attempt to locate and sink each other&apos;s ships.
-            </>
-          }
-          links={[
-            {
-              href: "https://angaaruriakhil.github.io/Battleship/",
-              label: "Live Page",
-              highlight: true,
-            },
-            {
-              href: "https://github.com/angaaruriakhil/Battleship",
-              label: "Source Code",
-            },
-          ]}
-        />
-
-        {/* 10 */}
-        <ProjectCard
-          aos={getAos(10)}
           imgSrc={MorseCodeTranslatorImg}
           imgAlt="A picture of the Morse Code Translator project."
           techIcons={
@@ -398,6 +364,42 @@ export default function Projects() {
             },
             {
               href: "https://github.com/angaaruriakhil/Morse-Code-Translator",
+              label: "Source Code",
+            },
+          ]}
+        />
+
+        {/* 10 */}
+
+        <ProjectCard
+          aos={getAos(10)}
+          imgSrc={CalculatorImg}
+          imgAlt="A picture of the Calculator project."
+          techIcons={
+            <>
+              <i className="devicon-javascript-plain colored" />
+              <i className="devicon-html5-plain colored" />
+              <i className="devicon-sass-original colored" />
+            </>
+          }
+          title="Calculator"
+          info={
+            <>
+              Calculator with support for basic operations, decimal inputs,
+              recurring decimals, negative number inputs and chaining
+              operations.
+              <br />
+              Tested using Cypress and usable on PC or mobile.
+            </>
+          }
+          links={[
+            {
+              href: "https://angaaruriakhil.github.io/js-calculator/",
+              label: "Live Page",
+              highlight: true,
+            },
+            {
+              href: "https://github.com/angaaruriakhil/js-calculator",
               label: "Source Code",
             },
           ]}

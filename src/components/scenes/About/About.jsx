@@ -54,6 +54,7 @@ export default function About() {
             data-aos="fade-right"
             data-aos-delay="40"
           >
+            <h3 className={styles.leftTitle}>Background</h3>
             <p>
               I’m a Senior Platform Engineer with a Chemical Engineering
               background and a proven track record of building reliable, secure
