@@ -73,7 +73,7 @@ export default function Projects() {
         />
 
         {/* 1 */}
-        <ProjectCard
+        {/* <ProjectCard
           aos={getAos(1)}
           imgSrc={PalaceImg}
           imgAlt="A picture of the SHED/Palace project."
@@ -98,7 +98,7 @@ export default function Projects() {
             { href: "#", label: "Not live yet", highlight: true },
             { href: "#", label: "Not live yet" },
           ]}
-        />
+        /> */}
 
         {/* 2 */}
         <ProjectCard
