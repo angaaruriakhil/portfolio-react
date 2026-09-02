@@ -50,7 +50,7 @@ export default function Landing() {
     if (bootPhase !== "boot") return;
     setBootText([]);
     const seq = [
-      "Booting Angaar Portfolio OS v2.0...",
+      "Booting Angaar Portfolio OS v2.2...",
       "> Initializing kernel modules...",
       "> Loading /usr/local/portfolio/config...",
       "> Mounting system directory... done.",
