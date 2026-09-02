@@ -16,7 +16,7 @@ export default function ExperienceCard({
   const techMap = useMemo(() => {
     const m = new Map();
     techCatalog.forEach((cat) =>
-      cat.items.forEach((it) => m.set(it.n.toLowerCase(), it))
+      cat.items.forEach((it) => m.set(it.n.toLowerCase(), it)),
     );
     // Aliases
     const alias = {
@@ -140,7 +140,15 @@ export default function ExperienceCard({
       {bullets?.length > 0 && (
         <ul className={styles.list}>
           {bullets.map((b, i) => (
-            <li key={i}>{b}</li>
+            <li key={i}>
+              {typeof b === "string" ? (
+                b
+              ) : (
+                <>
+                  <strong>{b.lead}</strong> {b.text}
+                </>
+              )}
+            </li>
           ))}
         </ul>
       )}
