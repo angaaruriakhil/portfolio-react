@@ -111,7 +111,7 @@ export default function Nav({ isOpen = false, onNavigate }) {
       <div className={styles.leftCluster}>
         <Logo compact />
         <span className={styles.brandTag} aria-label="OS build">
-          Portfolio OS v2.0
+          Portfolio OS v2.2
         </span>
         <span className={styles.dot} aria-hidden="true">
           ·
@@ -130,7 +130,7 @@ export default function Nav({ isOpen = false, onNavigate }) {
         </span>
       </div>
 
-      <span className={styles.brandCenter}>Portfolio OS v2.1</span>
+      <span className={styles.brandCenter}>Portfolio OS v2.2</span>
 
       {/* Mobile + desktop list; mobile visibility toggled via data-open */}
       <ul className={styles.listMaster} data-open={isOpen ? "true" : "false"}>
