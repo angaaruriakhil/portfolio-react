@@ -1,41 +1,7 @@
 import styles from "./About.module.css";
 import HeaderBar from "../../layout/HeaderBar/HeaderBar";
-import React, { useEffect, useMemo, useState } from "react";
 
 export default function About() {
-  const CORE_THEMES = [
-    "Developer experience",
-    "Secure-by-default delivery",
-    "Simple, scalable automation",
-    "Cross-team collaboration",
-    "Reliability & resilience",
-    "Continuous improvement",
-  ];
-
-  const [activeTheme, setActiveTheme] = useState(() =>
-    Math.floor(Math.random() * CORE_THEMES.length)
-  );
-  const [themesPaused, setThemesPaused] = useState(false);
-
-  useEffect(() => {
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (prefersReduced || themesPaused || CORE_THEMES.length < 2) return;
-
-    const id = setInterval(() => {
-      setActiveTheme((prev) => {
-        let n = prev;
-        while (n === prev) n = Math.floor(Math.random() * CORE_THEMES.length);
-        return n;
-      });
-    }, 2600);
-
-    return () => clearInterval(id);
-  }, [themesPaused]);
-
   return (
     <section id="about" className={styles.about}>
       <HeaderBar
@@ -54,149 +20,222 @@ export default function About() {
             data-aos="fade-right"
             data-aos-delay="40"
           >
-            <h3 className={styles.leftTitle}>Background</h3>
-            <p>
-              I’m a Senior Platform Engineer with a Chemical Engineering
-              background and a proven track record of building reliable, secure
-              delivery platforms that people actually enjoy working with.
-            </p>
-            <p>
-              I’ve supported and scaled engineering platforms in a global
-              environment, delivering improvements across CI/CD reliability,
-              security and governance, cloud migration, developer tooling, and
-              cost optimisation. I enjoy working where engineering meets
-              enablement — bringing platform, security, and product teams
-              together to solve real delivery problems with simplicity, intent
-              and comprehensiveness.
-            </p>
-            <p>
-              I care about calm problem-solving, clear communication, and
-              building trust through consistency. I enjoy improving developer
-              experience without compromising risk discipline, and helping teams
-              move faster <strong>because they’re safer</strong>, not in spite
-              of it.
-            </p>
-            <p>
-              When I’m not engineering platforms, you’ll usually find me fixing
-              electronics I probably shouldn’t have opened, watching cinema, or
-              exploring how complex systems work — whether that’s
-              infrastructure, hardware, or a story well told.
-            </p>
+            <div className={styles.cardHeader}>
+              <div>
+                <h3 className={styles.cardTitle}>Background</h3>
+                <span className={styles.cardSubtitle}>
+                  From Chemical to Platform Engineering
+                </span>
+              </div>
+            </div>
+
+            <div className={styles.intro}>
+              <p className={styles.introLead}>
+                I build secure, scalable platforms that make software delivery
+                simpler for developers.
+              </p>
+
+              <p>
+                I’m a Senior Platform Engineer working across cloud
+                infrastructure, DevSecOps, automation and developer experience.
+                I’m particularly interested in problems where technical
+                constraints, security, cost and developer needs meet.
+              </p>
+
+              <p className={styles.philosophy}>
+                I like making complicated things feel simple. Much of platform
+                engineering is about taking complexity that developers shouldn’t
+                have to think about and turning it into reliable, repeatable
+                paths.
+              </p>
+            </div>
+
+            <div className={styles.career}>
+              <div className={styles.sectionLabel}>Career path</div>
+
+              <div className={styles.timeline}>
+                <div className={styles.timelineItem}>
+                  <span className={styles.timelineYear}>2016–20</span>
+
+                  <div className={styles.timelineContent}>
+                    <strong>Chemical Engineering</strong>
+                    <span>First Class MEng · University of Surrey</span>
+                  </div>
+                </div>
+
+                <div className={styles.timelineItem}>
+                  <span className={styles.timelineYear}>2021–22</span>
+
+                  <div className={styles.timelineContent}>
+                    <strong>Software Engineering</strong>
+                    <span>_nology → QBE</span>
+                  </div>
+                </div>
+
+                <div className={styles.timelineItem}>
+                  <span className={styles.timelineYear}>2022–25</span>
+
+                  <div className={styles.timelineContent}>
+                    <strong>Platform Engineer</strong>
+                    <span>QBE · Cloud · DevSecOps · Automation</span>
+                  </div>
+                </div>
+
+                <div className={styles.timelineItem}>
+                  <span className={styles.timelineYear}>2025–now</span>
+
+                  <div className={styles.timelineContent}>
+                    <strong>Senior Platform Engineer</strong>
+                    <span>
+                      QBE · Platform · Developer Experience · Strategy
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.bottomGrid}>
+              <div className={styles.infoBlock}>
+                <div className={styles.sectionLabel}>Research</div>
+
+                <p>
+                  Before moving into software, I co-authored published research
+                  on PFAS remediation.
+                </p>
+
+                <a
+                  className={styles.researchLink}
+                  href="https://www.sciencedirect.com/science/article/abs/pii/S0045653521014971"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View publication
+                  <i className="fas fa-arrow-up-right-from-square" />
+                </a>
+              </div>
+
+              <div className={styles.infoBlock}>
+                <div className={styles.sectionLabel}>Outside engineering</div>
+
+                <p>
+                  Outside engineering, I enjoy repairing electronics, watching
+                  films and playing video games.
+                </p>
+              </div>
+            </div>
           </div>
 
           <aside
             className={`${styles.card} ${styles.right}`}
             data-aos="fade-left"
             data-aos-delay="80"
-            aria-label="Highlights and focus"
+            aria-label="How I work"
           >
-            <h3 className={styles.rightTitle}>Highlights &amp; Focus</h3>
-            <ul className={styles.highlightsList}>
-              <li>
-                <i className={`fas fa-cloud ${styles.icon}`}></i>
-                Senior Platform Engineer at a global insurer.
-              </li>
-
-              <li>
-                <i className={`fas fa-graduation-cap ${styles.icon}`} />
-                <span className={styles.liText}>
-                  First Class Honours ChemEng MEng alumnus of the
-                  <a
-                    className={styles.inlineLink}
-                    href="https://www.surrey.ac.uk/undergraduate/chemical-engineering"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    University of Surrey
-                  </a>
-                  .
+            <div className={styles.cardHeader}>
+              <div>
+                <h3 className={styles.cardTitle}>How I Work</h3>
+                <span className={styles.cardSubtitle}>
+                  Principles behind the way I engineer platforms
                 </span>
-              </li>
+              </div>
+            </div>
 
-              <li>
-                <i className={`fas fa-flask ${styles.icon}`} />
-                <span className={styles.liText}>
-                  Published researcher at
-                  <a
-                    className={styles.inlineLink}
-                    href="https://www.sciencedirect.com/science/article/abs/pii/S0045653521014971"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Chemosphere
-                  </a>
-                  .
-                </span>
-              </li>
+            <div className={styles.principles}>
+              <div className={styles.principle}>
+                <i className={`fas fa-project-diagram ${styles.icon}`} />
 
-              <li>
-                <i className={`fas fa-robot ${styles.icon}`}></i>
-                Led secure AI enablement initiatives to enhance developer
-                productivity.
-              </li>
-              <li>
-                <i className={`fas fa-cogs ${styles.icon}`}></i>
-                Automated secure CI image upgrades at scale.
-              </li>
-              <li>
-                <i className={`fas fa-cloud-upload-alt ${styles.icon}`}></i>
-                Cloud migration of core on-premise delivery tooling.
-              </li>
-              <li>
-                <i className={`fas fa-shield-alt ${styles.icon}`}></i>
-                Cost optimisation &amp; access governance improvements.
-              </li>
-              <li>
-                <i className={`fas fa-handshake ${styles.icon}`}></i>
-                Drove cross-team collaboration & incident resolution culture.
-              </li>
-              <li>
-                <i className={`fas fa-book-open ${styles.icon}`}></i>
-                Built developer-focused documentation, dashboards & tooling.
-              </li>
-              <li>
-                <i className={`fas fa-landmark ${styles.icon}`}></i>
-                Strengthened platform security posture & governance frameworks.
-              </li>
-              <li>
-                <i className={`fas fa-sync-alt ${styles.icon}`}></i>
-                Delivered major platform upgrades & changes safely at scale.
-              </li>
-              <li>
-                <i className={`fas fa-users-cog ${styles.icon}`}></i>
-                Enabled enterprise adoption of modern delivery practices.
-              </li>
-            </ul>
+                <div>
+                  <strong>Systems thinking</strong>
+                  <span>
+                    I look beyond the immediate problem to understand
+                    dependencies, failure modes and long-term maintainability.
+                  </span>
+                </div>
+              </div>
 
-            <hr className={styles.hairline} aria-hidden="true" />
+              <div className={styles.principle}>
+                <i className={`fas fa-shield-alt ${styles.icon}`} />
 
-            <div className={styles.metaRow}>
-              <span className={styles.metaLabel}>Core themes</span>
+                <div>
+                  <strong>Secure by default</strong>
+                  <span>
+                    Security and governance should be built into the path
+                    developers already take, rather than added afterwards.
+                  </span>
+                </div>
+              </div>
 
-              <span
-                className={styles.metaTags}
-                aria-label="Core themes"
-                onMouseEnter={() => setThemesPaused(true)}
-                onMouseLeave={() => setThemesPaused(false)}
-              >
-                {CORE_THEMES.map((t, i) => (
-                  <React.Fragment key={t}>
-                    <span
-                      className={`${styles.themeItem} ${
-                        i === activeTheme ? styles.themeActive : ""
-                      }`}
-                      onMouseEnter={() => setActiveTheme(i)}
-                    >
-                      {t}
-                    </span>
-                    {i < CORE_THEMES.length - 1 && (
-                      <span className={styles.sep} aria-hidden="true">
-                        •
-                      </span>
-                    )}
-                  </React.Fragment>
-                ))}
-              </span>
+              <div className={styles.principle}>
+                <i className={`fas fa-lightbulb ${styles.icon}`} />
+
+                <div>
+                  <strong>Pragmatic engineering</strong>
+                  <span>
+                    I balance engineering quality with risk, cost, delivery
+                    pressure and the constraints of the wider organisation.
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.principle}>
+                <i className={`fas fa-user-friends ${styles.icon}`} />
+
+                <div>
+                  <strong>Developer empathy</strong>
+                  <span>
+                    A platform should reduce friction and make the right way of
+                    doing things easier for the people using it.
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.principle}>
+                <i className={`fas fa-tasks ${styles.icon}`} />
+
+                <div>
+                  <strong>Ownership</strong>
+                  <span>
+                    I’m comfortable taking ambiguous problems from investigation
+                    through implementation, adoption and improvement.
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.principle}>
+                <i className={`fas fa-comments ${styles.icon}`} />
+
+                <div>
+                  <strong>Communication</strong>
+                  <span>
+                    I make complex technical decisions understandable across
+                    engineering, security and wider stakeholder groups.
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.principle}>
+                <i className={`fas fa-chart-line ${styles.icon}`} />
+
+                <div>
+                  <strong>Evidence over assumption</strong>
+                  <span>
+                    I prefer to understand problems through data, observation
+                    and experimentation before deciding what to change.
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.principle}>
+                <i className={`fas fa-sync-alt ${styles.icon}`} />
+
+                <div>
+                  <strong>Continuous improvement</strong>
+                  <span>
+                    I look for opportunities to leave systems simpler, safer and
+                    more reliable than I found them.
+                  </span>
+                </div>
+              </div>
             </div>
           </aside>
         </div>

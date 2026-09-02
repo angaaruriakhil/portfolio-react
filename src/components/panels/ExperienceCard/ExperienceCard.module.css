@@ -9,13 +9,26 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .role {
@@ -26,6 +39,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .roleIcon {
   color: #5be6cb;
   opacity: 0.95;
@@ -39,6 +53,18 @@
   flex: 0 0 auto;
 }
 
+/* =========================
+   Tech stack
+   ========================= */
+
+.stackRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+
 .stackIcon,
 .stackImgIcon,
 .stackDevIcon {
@@ -46,8 +72,10 @@
   height: 1em;
   line-height: 1;
   opacity: 0.85;
-  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* crisp */
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .stackIcon:hover,
@@ -65,11 +93,13 @@
   background: rgba(20, 28, 48, 0.35);
   color: #e7f6ff;
   line-height: 1;
-
   cursor: pointer;
   user-select: none;
-  transition: transform 0.15s ease, background 0.15s ease,
-    border-color 0.15s ease, opacity 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .stackMore:hover {
@@ -88,46 +118,115 @@
   outline-offset: 2px;
 }
 
-.headerRow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.stackRow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0 6px;
-}
+/* =========================
+   Metadata
+   ========================= */
 
 .timeline {
   margin: 6px 0 2px;
   font-size: 14px;
+  line-height: 1.5;
   opacity: 0.9;
 }
 
 .meta {
-  margin: 0 0 12px;
-  opacity: 0.85;
+  margin: 0 0 14px;
   font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.85;
 }
+
+/* =========================
+   Experience bullets
+   ========================= */
 
 .list {
-  list-style: disc outside;
-  padding-left: 1.2rem;
-  margin: 0.25rem 0 0;
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.list li {
-  display: list-item;
-  margin: 8px 0;
-  line-height: 1.55;
-  padding-left: 0;
+.bullet {
+  position: relative;
+  margin: 0;
+  padding: 15px 0 15px 22px;
+  line-height: 1.6;
 }
 
-.list li::marker {
-  color: #5be6cb;
-  font-size: 0.9em;
+.bullet + .bullet {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.bullet::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5be6cb;
+  box-shadow: 0 0 8px rgba(91, 230, 203, 0.18);
+}
+
+.bulletText {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.bulletContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bulletContent strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.bulletContent span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.65;
+  opacity: 0.76;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 720px) {
+  .card {
+    padding: 20px;
+  }
+
+  .role {
+    font-size: 19px;
+  }
+
+  .bullet {
+    padding: 14px 0 14px 20px;
+  }
+
+  .bullet::before {
+    top: 21px;
+    left: 1px;
+  }
+
+  .bulletContent strong {
+    font-size: 14.5px;
+  }
+
+  .bulletContent span,
+  .bulletText {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
