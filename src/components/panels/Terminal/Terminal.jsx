@@ -105,7 +105,7 @@ export default function Terminal({ visible = true, onMinimise, onClose }) {
                 .break()
                 .type(
                   '<span style="color:#9CCC65;">&nbsp;&nbsp;Occupation:</span> ' +
-                    '<span style="color:#c5e1a5;">"Platform Engineer"</span>,'
+                    '<span style="color:#c5e1a5;">"Senior Platform Engineer"</span>,'
                 )
                 .break()
                 .type(
