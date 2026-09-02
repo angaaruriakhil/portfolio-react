@@ -15,9 +15,11 @@ export default function ExperienceCard({
   // Build a lookup map from techData once
   const techMap = useMemo(() => {
     const m = new Map();
+
     techCatalog.forEach((cat) =>
       cat.items.forEach((it) => m.set(it.n.toLowerCase(), it)),
     );
+
     // Aliases
     const alias = {
       js: "JS/TS",
@@ -28,10 +30,12 @@ export default function ExperienceCard({
       copilot: "GitHub Copilot",
       "c#": "C#",
     };
+
     Object.entries(alias).forEach(([k, v]) => {
       const hit = m.get(v.toLowerCase());
       if (hit) m.set(k, hit);
     });
+
     // Fallbacks for items not in techData
     const fallbacks = {
       angular: {
@@ -39,7 +43,11 @@ export default function ExperienceCard({
         i: "devicon-angularjs-plain colored",
         tip: "Angular",
       },
-      "c#": { n: "C#", i: "devicon-csharp-plain colored", tip: "C#" },
+      "c#": {
+        n: "C#",
+        i: "devicon-csharp-plain colored",
+        tip: "C#",
+      },
       selenium: {
         n: "Selenium",
         i: "devicon-selenium-plain colored",
@@ -51,15 +59,21 @@ export default function ExperienceCard({
         tip: "Spring Boot / Java backend",
       },
     };
+
     Object.entries(fallbacks).forEach(([k, v]) => {
       if (!m.has(k)) m.set(k, v);
     });
+
     return m;
   }, [techCatalog]);
 
   const resolvedStack = (stack || []).map((name) => {
     const key = String(name).toLowerCase();
-    return { name, def: techMap.get(key) || techMap.get(name.toLowerCase()) };
+
+    return {
+      name,
+      def: techMap.get(key) || techMap.get(name.toLowerCase()),
+    };
   });
 
   const maxIcons = 20;
@@ -68,8 +82,10 @@ export default function ExperienceCard({
 
   const renderIcon = (def, name, idx) => {
     if (!def) return null;
+
     const title = name;
-    if (def.c)
+
+    if (def.c) {
       return (
         <def.c
           key={`${name}-${idx}`}
@@ -77,7 +93,9 @@ export default function ExperienceCard({
           title={title}
         />
       );
-    if (def.src)
+    }
+
+    if (def.src) {
       return (
         <img
           key={`${name}-${idx}`}
@@ -87,7 +105,9 @@ export default function ExperienceCard({
           className={styles.stackImgIcon}
         />
       );
-    if (def.i)
+    }
+
+    if (def.i) {
       return (
         <i
           key={`${name}-${idx}`}
@@ -96,6 +116,8 @@ export default function ExperienceCard({
           aria-hidden="true"
         />
       );
+    }
+
     return null;
   };
 
@@ -115,6 +137,7 @@ export default function ExperienceCard({
       {(shown.length > 0 || hiddenCount > 0) && (
         <div className={styles.stackRow} aria-label="Tech used">
           {shown.map((s, i) => renderIcon(s.def, s.name, i))}
+
           {hiddenCount > 0 && (
             <button
               type="button"
@@ -135,18 +158,20 @@ export default function ExperienceCard({
       )}
 
       {timeline ? <p className={styles.timeline}>{timeline}</p> : null}
+
       {org ? <p className={styles.meta}>{org}</p> : null}
 
       {bullets?.length > 0 && (
         <ul className={styles.list}>
           {bullets.map((b, i) => (
-            <li key={i}>
+            <li key={i} className={styles.bullet}>
               {typeof b === "string" ? (
-                b
+                <span className={styles.bulletText}>{b}</span>
               ) : (
-                <>
-                  <strong>{b.lead}</strong> {b.text}
-                </>
+                <div className={styles.bulletContent}>
+                  <strong>{b.lead}</strong>
+                  <span>{b.text}</span>
+                </div>
               )}
             </li>
           ))}
